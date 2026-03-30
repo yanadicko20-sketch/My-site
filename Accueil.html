@@ -1,167 +1,194 @@
 <!doctype html>
 <html lang="fr">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Selons de beauté</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-      
-   </head>
-   <body>
-      <header>
-         <p>
-         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse bg-primary rounded" id="menu">
-                 
-                  <img src="image/tato.jpg" height="50" alt="Logo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Royal Beauté 👑 | L'Excellence au service de votre éclat</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --gold: #d4af37;
+      --dark-royal: #121212;
+      --soft-cream: #f9f6f2;
+    }
 
-                  <div class="mx-auto text-dark fw-bold ">Royal Beauté 👑</div>
-                  
-                  <ul class="navbar-nav ms-auto">
-                     <li class="nav-item"><a class="nav-link text-white" href="Accueil.html">Accueil</a></li>
-                     <li class="nav-item"><a class="nav-link text-white" href="A propos.html">A propos</a></li>
-                     <li class="nav-item"><a class="nav-link text-white" href="service.html">service</a></li>
-                     <li class="nav-item"><a class="nav-link text-white" href="contact.html">contact</a></li>
-                     <li class="nav-item"><a class="nav-link text-white" href="Formulaire.php">Formulaire</a></li>
-                  </ul>
-               </div>
-            </div>
-         </nav>
-         </p>
-      </header>
-      <div id="carouselExampleSlidesOnly " class="carousel slide" data-bs-ride="carousel">
-         <div class="carousel-inner mb-5">
-            <div class="carousel-item active">
-               <img src="image/logo3.jpeg" class="d-block w-100"  style="height: 700px;" alt="...">
-               <div class="carousel-caption d-none d-md-block ">
-                  <h5 class="text-danger ">Bienvenue dans notre salon ( Royal Beauté 👑) ou votre beouté est notre priorité</h5>
-                  <p class="text-primary"> La beouté commencé ici.</p>
-               </div>
-            </div>
-            <div class="carousel-item">
-               <img src="image/logo4.jpeg" class="d-block w-100"  style="height: 700px;" alt="...">
-               <div class="carousel-caption d-none d-md-block ">
-                  <h5 class="text-danger ">Bienvenue dans notre salon ( Royal Beauté👑) ou votre beouté est notre priorité</h5>
-                  <p class="text-primary"> La beouté commencé ici.</p>
-               </div>
-            </div>
-            <div class="carousel-item">
-               <img src="image/image5.jpg" class="d-block w-100" style="height: 700px;"  alt="...">
-               <div class="carousel-caption d-none d-md-block ">
-                  <h5 class="text-danger ">Bienvenue dans notre salon ( Royal Beauté👑) ou votre beouté est notre priorité</h5>
-                  <p class="text-primary"> La beouté commencé ici.</p>
-               </div>
-            </div>
-         </div>
+    body { font-family: 'Poppins', sans-serif; background-color: white; color: #333; overflow-x: hidden; }
+    h1, h2, h3, .navbar-brand { font-family: 'Playfair Display', serif; }
+
+    /* Navbar Épurée */
+    .navbar { background-color: white !important; padding: 1.2rem 0; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
+    .navbar-brand { color: var(--dark-royal) !important; font-weight: 700; letter-spacing: 2px; }
+    .nav-link { color: #555 !important; font-weight: 500; transition: 0.3s; margin: 0 15px; text-transform: uppercase; font-size: 0.85rem; }
+    .nav-link:hover { color: var(--gold) !important; }
+
+    /* Hero Vidéo/Image Impact */
+    .hero-banner {
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('image/logo3.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero-content h1 { font-size: clamp(3rem, 8vw, 5.5rem); margin-bottom: 20px; }
+    
+    /* Section Publicitaire 1 : Le Concept */
+    .promo-section { padding: 100px 0; background-color: var(--soft-cream); }
+    .ad-text { font-size: 1.1rem; line-height: 1.8; color: #666; }
+    .gold-divider { width: 60px; height: 3px; background: var(--gold); margin: 20px 0; }
+
+    /* Section Publicitaire 2 : Grande Image & Texte superposé */
+    .split-promo { position: relative; padding: 0; background: var(--dark-royal); color: white; }
+    .split-img { height: 600px; object-fit: cover; opacity: 0.7; }
+    .split-content { padding: 80px; }
+
+    /* Boutons de luxe */
+    .btn-royal {
+      background-color: var(--gold); color: white;
+      border-radius: 0; padding: 15px 40px;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 2px;
+      transition: 0.4s; border: 1px solid var(--gold);
+    }
+    .btn-royal:hover { background: white; color: var(--gold); }
+
+    /* Footer */
+    footer { background: var(--dark-royal); color: #888; padding: 80px 0 40px; }
+    .social-link { color: white; text-decoration: none; font-size: 1.2rem; margin: 0 15px; transition: 0.3s; }
+    .social-link:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">ROYAL BEAUTÉ 👑</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="Accueil.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="A propos.html">L'Institut</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Soins</a></li>
+        <li class="nav-item ms-lg-4"><a class="btn btn-royal btn-sm px-4" href="Formulaire.php">Prendre rendez-vous</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero-banner">
+  <div class="container hero-content">
+    <h1 class="animate__animated animate__fadeInUp">Révélez votre <br><span style="color: var(--gold);">éclat intérieur</span></h1>
+    <p class="fs-4 mb-5 fw-light">L'expérience ultime du soin de luxe à Bamako.</p>
+    <a href="service.html" class="btn btn-royal">Explorer l'univers</a>
+  </div>
+</header>
+
+<section class="promo-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <h6 class="text-uppercase text-muted ls-2">L'Excellence comme standard</h6>
+        <h2 class="display-5 mb-4">Plus qu'un salon, <br>une destination.</h2>
+        <div class="gold-divider"></div>
+        <p class="ad-text mb-4">
+          Depuis plus de 10 ans, Royal Beauté redéfinit les codes de l'esthétique. Nous ne nous contentons pas de soigner votre apparence ; nous créons une parenthèse de sérénité absolue. 
+        </p>
+        <p class="ad-text mb-5">
+          Utilisant les dernières technologies capillaires et des protocoles de soins exclusifs, chaque visite est une promesse de transformation.
+        </p>
+        <a href="A propos.html" class="text-dark fw-bold text-decoration-none border-bottom border-dark pb-1">DÉCOUVRIR NOTRE HISTOIRE</a>
       </div>
-      <div class="justify-content-center bg-info mb-5 text-center border-bottom rounded">
-         <h1 class=" text-dark fw-bold btn btn-dange">Welcome to Royal beauty 👑:</h1>
-         <p>Beauty begins the moment you decide to be yourself.
-            Let us reveal the best version of you.
-         </p>
-         <p>
-            (La beauté commence au moment où vous décidez d’être vous-même.
-            Laissez-nous révéler la meilleure version de vous.)
-         </p>
+      <div class="col-lg-6">
+        <div class="row g-3">
+          <div class="col-6 mt-5">
+            <img src="image2/1111.jpeg" class="img-fluid shadow-lg" alt="Soin">
+          </div>
+          <div class="col-6">
+            <img src="image/logo4.jpeg" class="img-fluid shadow-lg" alt="Look">
+          </div>
+        </div>
       </div>
-      <section class="py-5 bg-light mb-5">
-         <div class="container">
-            <div class="row align-items-center">
-               <div class="col-md-4">
-                  <img src="image/télécharger r (3).jpg" class="w-100" style="height:400px; object-fit:cover;" alt="">
-               </div>
-               <div class="col-md-4">
-                  <h3> Bienvenue dans Royal Beauté 👑: </h3>
-                  <p>
-                     Nous sommes un établissement spécialisé dans les soins esthétiques et l'embellissement du corps et aussi des soins et le mise en forme des cheveux 
-                  </p>
-                  
-               </div>
-               <div class="col-md-4">
-                  <img src="image2/télécharger (6).jpg" class="w-100" style="height:400px; object-fit:cover;" alt="">
-               </div>
+    </div>
+  </div>
+</section>
+
+<section class="split-promo container-fluid">
+  <div class="row">
+    <div class="col-lg-6 p-0">
+      <img src="image/télécharger r (3).jpg" class="w-100 split-img" alt="Ambiance">
+    </div>
+    <div class="col-lg-6 d-flex align-items-center split-content">
+      <div>
+        <h2 class="display-6 mb-4">Offrez-vous le <br><span class="text-warning">Privilège Royal</span></h2>
+        <p class="lead opacity-75 mb-5">Prise en charge personnalisée, diagnostic offert et produits haut de gamme. Votre moment commence ici.</p>
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <h5 class="text-warning h6 text-uppercase">Diagnostic</h5>
+                <p class="small text-white-50">Analyse gratuite de votre peau et de vos cheveux.</p>
             </div>
-         </div>
-      </section>
-      <div class="justify-content-center bg-secondary mb-5 text-center border-bottom rounded">
-         <h1 class=" text-dark fw-bold ">Nous vous offre des services satisfaisants</h1>
+            <div class="col-md-6">
+                <h5 class="text-warning h6 text-uppercase">Produits</h5>
+                <p class="small text-white-50">Sélection des meilleures marques internationales.</p>
+            </div>
+        </div>
+        <a href="Formulaire.php" class="btn btn-royal">Réserver mon expérience</a>
       </div>
-      <section class="py-5 bg-light mb-5">
-         <div class="container">
-            <div class="row align-items-center">
-               <div class="col-md-4">
-                  <img src="image/tel4.jpeg" class="w-100" style="height:400px; object-fit:cover;" alt="">
-               </div>
-               <div class="col-md-4">
-                  <br>
-                  <p>
-                     Votre style, notre créativité.
-                     Transformez votre look et brillez en toute confiance.
-                  </p>
-                 
-               </div>
-               <div class="col-md-4">
-                  <img src="image2/télécharger 10.jpg" class="w-100" style="height:400px; object-fit:cover;" alt="">
-               </div>
-            </div>
-         </div>
-      </section>
-      <section class="py-5 bg-light mb-5">
-         <div class="container">
-            <div class="row align-items-center">
-               <div class="col-md-4">
-                  <img src="image2/55555.jpeg" class="w-100" style="height:400px; object-fit:cover;" alt="">
-               </div>
-               <div class="col-md-4">
-                  <p>
-                     Parce que vous méritez le meilleur, nous créons la beauté avec passion.
-                     Des soins de qualité, un service exceptionnel, un résultat remarquable.
-                  </p>
-                  
-               </div>
-               <div class="col-md-4">
-                  <img src="image/télécharger (1).jpg" class="w-100" style="height:400px; object-fit:cover;" alt="">
-               </div>
-            </div>
-         </div>
-      </section>
-      <div class="justify-content-center bg-info mb-5 text-center border-bottom rounded">
-         <h1 class=" text-dark fw-bold btn btn-dange"> Royal beauté 👑 vous offrant:</h1>
-         <p>  
-            Votre style, .
-            Transformez votre look et brillez en toute confiance.
-         </p>
-      </div>
-      <section class="py-5 bg-light mb-5">
-         <div class="container">
-            <div class="row align-items-center">
-               <div class="col-md-4">
-                  <img src="image/massage.jpg" class="w-100" style="height:400px; object-fit:cover;" alt="">
-               </div>
-               <div class="col-md-4">
-                  <p>
-                     Entrez avec confiance, sortez rayonnante.
-                     Prenez rendez-vous aujourd’hui et vivez l’expérience beauté autrement.
-                  </p>
-                  <br>
-                  
-             
-                  
-               </div>
-               <div class="col-md-4">
-                  <img src="image/makeup look.jpg" class="w-100" style="height:400px; object-fit:cover;" alt="">
-               </div>
-            </div>
-         </div>
-      </section>
-      <footer class="bg-dark text-white text-center py-3">
-         ©  2026 Notre  Salon à droits en vos réservés
-      </footer>
-      
-   </body>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 text-center bg-white">
+    <div class="container py-5">
+        <h2 class="mb-3">Rejoignez le cercle Royal</h2>
+        <p class="text-muted mb-5">Suivez-nous sur les réseaux pour découvrir nos avant/après et nos offres exclusives.</p>
+        <div class="d-flex justify-content-center">
+            <a href="#" class="social-link text-dark">Instagram</a>
+            <a href="#" class="social-link text-dark">Facebook</a>
+            <a href="#" class="social-link text-dark">TikTok</a>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center">
+  <div class="container">
+    <h3 class="footer-title mb-4">ROYAL BEAUTÉ 👑</h3>
+    
+    <div class="mb-4">
+        <a href="Accueil.html" class="social-link">Accueil</a>
+        <a href="A propos.html" class="social-link">L'Institut</a>
+        <a href="service.html" class="social-link">Soins</a>
+        <a href="contact.html" class="social-link">Contact</a>
+    </div>
+
+    <div class="mb-4 py-3">
+        <a href="#" class="social-link text-warning">Instagram</a>
+        <a href="#" class="social-link text-warning">Facebook</a>
+        <a href="#" class="social-link text-warning">WhatsApp</a>
+    </div>
+    
+    <hr class="mx-auto w-25 mb-4" style="border-color: var(--gold); opacity: 0.3;">
+    
+    <p class="footer-info">
+        <span class="mx-2">📍 Bamako, Mali</span> | 
+        <span class="mx-2">📞 +223 73 37 71 43</span>
+    </p>
+    <p class="footer-info small mt-2">
+        Ouvert du Lundi au Samedi : 09h00 - 20h00
+    </p>
+    
+    <p class="mt-5 mb-0" style="font-size: 0.75rem; letter-spacing: 1px; opacity: 0.6;">
+        © 2026 ROYAL BEAUTÉ. TOUS DROITS RÉSERVÉS.
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
